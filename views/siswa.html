@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Siswa</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background-color: #373737;
+        padding: 20px;
+    }
+
+    h1 {
+        color: #00ffee;
+    }
+
+    form {
+        background: rgb(170, 218, 213);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 100px #00ffee;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    div {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="number"],
+    select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: #006a6c;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #6597a7;
+    }
+
+    .gendre {
+        display: flex;
+        gap: 10px;
+    }
+</style>
+
+<body>
+    <h1>${title}</h1>
+    <form action="/siswa/data" method="post">
+        <div>
+            <label for="nama">Nama Siswa</label>
+            <input type="text" name="nama">
+
+            <label for="tempatlahir">Tempat Lahir</label>
+            <input type="text" name="tempatlahir">
+
+            <label for="tanggallahir">Tanggal Lahir</label>
+            <input type="date" name="tanggallahir">
+
+            <label for="alamat">Alamat</label>
+            <input type="text" name="alamat">
+
+            <label>Jenis Kelamin</label>
+            <div class="gendre">
+                <input type="radio" id="pria" name="jeniskelamin" value="Pria">
+                <label for="pria">Pria</label>
+                <input type="radio" id="wanita" name="jeniskelamin" value="Wanita">
+                <label for="wanita">Wanita</label>
+            </div>
+
+            <label for="agama">Agama</label>
+            <select name="agama">
+                <option value="">Pilih Agama</option>
+                <option>Islam</option>
+                <option>Kristen</option>
+                <option>Hindu</option>
+                <option>Buddha</option>
+                <option>Konghucu</option>
+                <option>Katolik</option>
+            </select>
+
+            <label for="komite">Bayar Komite</label>
+            <input type="number" name="komite">
+            
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+
+</html>
