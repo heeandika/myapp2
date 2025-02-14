@@ -16,7 +16,7 @@ router.post('/data', function(req, res) {
     alamat: req.body.alamat,
     agama: req.body.agama,
     jeniskelamin: req.body.jeniskelamin,
-    komite: 500000-Number(req.body.komite),
+    komite: 500000-Number(req.body.komite)
   }
   console.log(malas)
   res.render('datasiswa', {locals: {malas}})
